@@ -34,7 +34,7 @@ def get_escape_time_color_arr(
     for i in range(c_arr.shape[0]):
         for j in range(c_arr.shape[1]):
             escape_time = get_escape_time(c_arr[i, j], max_iterations)
-            if escape_time == none:
+            if escape_time == None:
                 escape_time == max_iterations
             color_arr[i, j] = (max_iterations - escape_time + 1) / (max_iterations + 1)
 
