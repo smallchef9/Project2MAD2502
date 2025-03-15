@@ -39,7 +39,7 @@ def get_escape_time_color_arr(
     return color_arr
 
 
-def get_complex_grid(
+def get_complex_grid(def get_complex_grid(
     top_left: complex,
     bottom_right: complex,
     step: float
@@ -48,17 +48,22 @@ def get_complex_grid(
 
 #calculate both components
     real_start = top_left.real
-    real_end = bottom_right.real
+    read_end = bottom_right.real
     imag_start = top_left.imag
-    imag_end = bottom_right.imag
+    imag_end = bottom_red.imag
+
+# Create 1D arrays for real and imaginary values
+    real_values = np.arange(real_start, real_end, step)
+    imag_values = np.arange(imag_start, imag_end, -step)
 
 
 #grid dimensions
     rows = len(imag_values)
     cols = len(real_values)
 
-# create arrays for real and imaginary parts
-    real_values, imag_grid = np.meshgrid(real_values, imag_values)
+  # Create the real_grid and imag_grid using simple array broadcasting
+    real_grid = np.ones((rows, 1)) * real_values 
+    imag_grid = np.ones((1, cols)) * imag_values
 
     complex_grid = real_grid + 1j * imag_grid
 
