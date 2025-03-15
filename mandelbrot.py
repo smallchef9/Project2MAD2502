@@ -37,9 +37,7 @@ def get_escape_time_color_arr(
             color_arr[i, j] = (max_iterations - escape_time + 1) / (max_iterations + 1)
 
     return color_arr
-
-
-def get_complex_grid(def get_complex_grid(
+def get_complex_grid(
     top_left: complex,
     bottom_right: complex,
     step: float
@@ -48,9 +46,9 @@ def get_complex_grid(def get_complex_grid(
 
 #calculate both components
     real_start = top_left.real
-    read_end = bottom_right.real
+    real_end = bottom_right.real
     imag_start = top_left.imag
-    imag_end = bottom_red.imag
+    imag_end = bottom_right.imag
 
 # Create 1D arrays for real and imaginary values
     real_values = np.arange(real_start, real_end, step)
