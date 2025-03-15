@@ -1,18 +1,15 @@
-def get_julia_color_arr(c: complex, x_min: float, x_max: float, y_min: float, y_max: float, width: int, height: int, max_iterations: int = 256):
-    ''' collects escape data for the filled in Julia set for a given 
-    complex number and converts it to a color.'''
-    x = np.linspace(x_min, x_max, width)
-    y = np.linspace(y_min, y_max, height)
-    X, Y = np.meshgrid(x, y)
-    Z = X + 1j * Y
-    escape_iterations = np.zeros(Z.shape, dtype=int)
+def get_julia_color_arr(grid, c, max_iterations=256):
+    '''Generate a Julia set color array for a given complex constant.'''
+    escape_iterations = np.zeros(grid.shape, dtype=int)
 
-
+    Z = grid.copy()
     for i in range(max_iterations):
-        Z = Z**2 + c
-        mask = np.abs(Z) > max(abs(c), 2)
+        Z = Z ** 2 + c
+        mask = np.abs(Z) > 2  
         escape_iterations[mask] = i + 1
-        Z[mask] = np.nan
+        Z[mask] = np.nan  
+    escape_iterations = np.clip(escape_iterations, 1, max_iterations)
 
+    color_arr = np.uint8(255 * escape_iterations / max_iterations)
 
-   
+    return color_arr
