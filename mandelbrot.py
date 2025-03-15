@@ -45,10 +45,31 @@ def get_complex_grid(
     step: float
 ) -> np.ndarray:
     ...
-#create array of real values starting from real part of top_left to bottom_right
-    real_values = np.arange(top_left.real, bottom_right.imag, step)
-#create array of imaginary values starting from imaginary part of top_left to bottom_right (reversed so order is top to bottom still)
-    imaginary_values = np.arange(top_left.real, bottom_right.imag, step[::-1])
-# generate 2D grid
-    complex_grid = np.array([[r + 1j * i for r in real_values] for i in imaginary_values])
+
+#calculate both components
+    real_start = top_left.real
+    read_end = bottom_right.real
+    imag_start = topleft.imag
+    imag_end = bottom_red.imag
+
+# create arrays for real and imaginary parts
+    real_values = np.arange(real_start, real_end, step)
+    imag_values = np.arange(imag_start, imag_end, -step)
+
+#grid dimensions
+    rows = len(imag_values)
+    cols = len(real_values)
+
+#creating empty grip
+    complex_grid = np.zeros((rows, cols), dtype = complex)
+
+#create grid of real and image values
+    complex_grid = real_grid + 1j * imag_grid
+
+ #FILL IN GRID
+    for i in range(rows):
+        for j in range(cols:
+            complex_gris[i, j] = real_values[j] + 1j * imag_values[1]
+
     return complex_grid
+```
