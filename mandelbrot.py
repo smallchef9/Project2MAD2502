@@ -48,9 +48,9 @@ def get_complex_grid(
 
 #calculate both components
     real_start = top_left.real
-    read_end = bottom_right.real
-    imag_start = topleft.imag
-    imag_end = bottom_red.imag
+    real_end = bottom_right.real
+    imag_start = top_left.imag
+    imag_end = bottom_right.imag
 
 # create arrays for real and imaginary parts
     real_values = np.arange(real_start, real_end, step)
@@ -61,15 +61,15 @@ def get_complex_grid(
     cols = len(real_values)
 
 #creating empty grip
-    complex_grid = np.zeros((rows, cols), dtype = complex)
+    complex_grid = np.zeros((rows, cols), dtype=complex)
 
 #create grid of real and image values
     complex_grid = real_grid + 1j * imag_grid
 
  #FILL IN GRID
     for i in range(rows):
-        for j in range(cols:
-            complex_gris[i, j] = real_values[j] + 1j * imag_values[1]
+        for j in range(cols):
+            complex_grid[i, j] = real_values[j] + 1j * imag_values[i]
 
     return complex_grid
 def get_julia_color_arr(grid, c, max_iterations=256):
