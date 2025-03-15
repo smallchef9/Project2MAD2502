@@ -1,4 +1,4 @@
-def julia_set(c: complex, x_min: float, x_max: float, y_min: float, y_max: float, width: int, height: int, max_iterations: int = 256):
+def get_julia_color_arr(c: complex, x_min: float, x_max: float, y_min: float, y_max: float, width: int, height: int, max_iterations: int = 256):
     x = np.linspace(x_min, x_max, width)
     y = np.linspace(y_min, y_max, height)
     X, Y = np.meshgrid(x, y)
