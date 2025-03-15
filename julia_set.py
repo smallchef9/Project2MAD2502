@@ -15,14 +15,4 @@ def get_julia_color_arr(c: complex, x_min: float, x_max: float, y_min: float, y_
         Z[mask] = np.nan
 
 
-    plt.figure(figsize=(10, 10))
-    plt.imshow(escape_iterations, cmap='twilight_shifted', extent=(x_min, x_max, y_min, y_max))
-    plt.colorbar()
-    plt.title(f"Julia Set for c = {c}")
-    plt.xlabel("Re(z)")
-    plt.ylabel("Im(z)")
-    plt.show()
-
-
-c = -0.70176 + 0.3842j
-get_julia_color_arr(c, -1.5, 1.5, -1.5, 1.5, 800, 800)
+   
