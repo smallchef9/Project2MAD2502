@@ -25,4 +25,4 @@ def get_julia_color_arr(c: complex, x_min: float, x_max: float, y_min: float, y_
 
 
 c = -0.70176 + 0.3842j
-julia_set(c, -1.5, 1.5, -1.5, 1.5, 800, 800)
+get_julia_color_arr(c, -1.5, 1.5, -1.5, 1.5, 800, 800)
