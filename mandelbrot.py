@@ -49,7 +49,7 @@ def get_complex_grid(
 #calculate both components
     real_start = top_left.real
     read_end = bottom_right.real
-    imag_start = topleft.imag
+    imag_start = top_left.imag
     imag_end = bottom_red.imag
 
 
