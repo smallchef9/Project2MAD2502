@@ -1,5 +1,10 @@
 import numpy as np
 def get_escape_time(c: complex, max_iterations: int) -> int | None:
+    ''' 
+    Computes the escpate time of a complex value.
+    Parameters are c: complex, and max_iterations: int
+    Returns the number of iterations c passes before it escapes. 
+    '''
     z = 0 + 0j 
     for k in range(max_iterations):
         z = z ** 2 + c
