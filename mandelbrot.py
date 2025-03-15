@@ -62,7 +62,7 @@ def get_complex_grid(
     cols = len(real_values)
 
   # Create the real_grid and imag_grid using simple array broadcasting
-    real_grid = np.ones((rows, 1)) * real_values 
+    real_grid = np.ones((rows, 1)) * real_values
     imag_grid = np.ones((1, cols)) * imag_values
 
     complex_grid = real_grid + 1j * imag_grid
