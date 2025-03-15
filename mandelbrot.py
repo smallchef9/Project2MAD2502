@@ -5,12 +5,12 @@ def get_escape_time(c: complex, max_iterations: int) -> int | None:
     Parameters are c: complex, and max_iterations: int
     Returns the number of iterations c passes before it escapes. 
     '''
-    z = 0 + 0j 
+    z = 0 + 0j  
     for k in range(max_iterations):
-        z = z ** 2 + c
+        z = z ** 2 + c  
         if abs(z) > 2:
-            return k
-    return max_iterations
+            return k  
+    return None 
 
 
 def get_escape_time_color_arr(
