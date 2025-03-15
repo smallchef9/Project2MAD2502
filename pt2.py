@@ -1,4 +1,5 @@
 ## Part 2: Defining a Grid (10 points)
+import numpy as np
 def get_complex_grid(
     top_left: complex,
     bottom_right: complex,
@@ -12,3 +13,4 @@ def get_complex_grid(
 # generate 2D grid
     complex_grid = np.array([[r + 1j * i for r in real_values] for i in imaginary_values])
     return complex_grid
+
