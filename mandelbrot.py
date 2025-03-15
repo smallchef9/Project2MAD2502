@@ -50,7 +50,7 @@ def get_complex_grid(
     real_start = top_left.real
     read_end = bottom_right.real
     imag_start = top_left.imag
-    imag_end = bottom_red.imag
+    imag_end = bottom_right.imag
 
 
 #grid dimensions
